@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: wordpress-deployment
+spec:
+  replicas: 3 # The desired state the Control Plane will fiercely maintain
+  selector:
+    matchLabels:
+      app: custom-wp
+  template:
+    metadata:
+      labels:
+        app: custom-wp
+    spec:
+      containers:
+      - name: wordpress
+        image: wordpress:latest # Swap with your custom Docker Hub image once pushed
+        ports:
+        - containerPort: 80
