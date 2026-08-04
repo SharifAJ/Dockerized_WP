@@ -14,6 +14,6 @@ spec:
     spec:
       containers:
       - name: wordpress
-        image: wordpress:latest # Swap with your custom Docker Hub image once pushed
+        image: wordpress:latest 
         ports:
         - containerPort: 80
